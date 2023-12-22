@@ -1,0 +1,13 @@
+
+
+
+Cloud FE   -> Cloud BE   -> Cloud DB
+
+
+Cloud FE URL ->  https://superlative-cheesecake-dee70d.netlify.app/
+
+Cloud BE URL ->  https://nodejsmongooseconnectionproject.onrender.com/api/users/
+
+Cloud DB ->  Project Name : GuviTaskProject
+
+             Database Name : Userdata
