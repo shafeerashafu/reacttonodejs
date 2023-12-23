@@ -1,35 +1,28 @@
 
-import { useState } from 'react';
+
 import './App.css'
-import UserForm from './UserForm';
-import { createUser,getAlluser } from './crudapi';
-import { useEffect } from 'react';
-import UserList from './UserList';
+import Home from './Home';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Register from './Pages/Register.jsx';
+import Login from './Pages/Login.jsx';
+
 
 
 function App() {
-  const [data,setData]=useState([]);
-
-  const createNewuser = async (user)=>{
-    const responseData=await createUser(user);
-    setData([...data,responseData]);
-  }
-
-  const loadUserdata =async ()=>{
-    const loadData=await getAlluser();
-    setData(loadData);
-  }
-
-  useEffect(()=>{
-    loadUserdata();
-  },[]);
+  
 
   return (
     <>
-      <div>
-       <UserForm createNewuser={createNewuser}/>
-       <UserList users={data}/>
-        </div>
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route index element={<Home onlyListing/>} />
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
+      
     </>
   )
 }
