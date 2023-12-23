@@ -4,6 +4,8 @@ import { Link} from "react-router-dom";
 import { registerUser } from "../crudapi.jsx";
 
 const Register = () => {
+  //const isAuthenticated = Boolean(localStorage.getItem("isAuthenticated"));
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
@@ -41,6 +43,11 @@ const Register = () => {
     alert("User Created Successfully, Please Login Now....");
     
   };
+
+  // if (isAuthenticated) {
+  //   return <Navigate to="/" />;
+  // }
+
   return (
     <>
     <div className="register-form-container">

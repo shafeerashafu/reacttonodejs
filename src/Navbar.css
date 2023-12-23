@@ -1,0 +1,28 @@
+/* styles for the navigation bar */
+.navbar {
+    
+    padding: 10px 20px;
+  }
+  
+  /* styles for the buttons */
+  .btn-register, .btn-login {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .btn-register {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .btn-login {
+    background-color: #008CBA; /* Blue */
+  }
+  
+  /* Hover effect */
+  .btn-register:hover, .btn-login:hover {
+    opacity: 0.8;
+  }
+  

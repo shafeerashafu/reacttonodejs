@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { loginUser } from "../crudapi.jsx";
 
 const Login = () => {
+ // const isAuthenticated = Boolean(localStorage.getItem("isAuthenticated"));
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  //const [directToHome, setDirectToHome] = useState(false);
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -21,13 +22,19 @@ const Login = () => {
     console.log("Password:", password);
     const data = await loginUser({ email, password });
     if (data.code) {
-        localStorage.setItem("userDetails",JSON.stringify(data.Userdata))
+      localStorage.setItem("isAuthenticated", true);
+      localStorage.setItem("userDetails",JSON.stringify(data.Userdata));
+      //setDirectToHome(true);
     }
     else {
         // stay in the same page
         alert(data.msg);
     }
-}
+  }
+
+  // if (directToHome || isAuthenticated) {
+  //   return <Navigate to={"/"} />;
+  // }
 
   return (
     <>
@@ -49,7 +56,7 @@ const Login = () => {
           required
         />
         <div className="form-footer">
-          <button type="submit">Login</button>
+          <button className="btn" type="submit">Login</button>
           <Link to="/register">New user?</Link>
         </div>
       </form>
