@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./Register.css";
-import { Link} from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 import { registerUser } from "../crudapi.jsx";
 
 const Register = () => {
-  //const isAuthenticated = Boolean(localStorage.getItem("isAuthenticated"));
+  const isAuthenticated = Boolean(localStorage.getItem("isAuthenticated"));
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,9 +44,9 @@ const Register = () => {
     
   };
 
-  // if (isAuthenticated) {
-  //   return <Navigate to="/" />;
-  // }
+  if (isAuthenticated) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <>

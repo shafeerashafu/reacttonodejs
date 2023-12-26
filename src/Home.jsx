@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import UserList from "./UserList";
 import PropTypes from "prop-types";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Home = ({ onlyListing }) => {
   const [data, setData] = useState([]);
@@ -28,7 +28,7 @@ const Home = ({ onlyListing }) => {
       <div>
         {!onlyListing && <UserForm createNewuser={createNewuser} />}
         <UserList users={data} />
-        <nav className="navbar">
+        {/* <nav className="navbar">
           <div>
             <Link to="/register" className="btn-register">
               Register
@@ -37,7 +37,7 @@ const Home = ({ onlyListing }) => {
               Login
             </Link>
           </div>
-        </nav>
+        </nav> */}
       </div>
     </>
   );

@@ -33,7 +33,7 @@ const UserCard = ({ name, dob, email, imageUrl }) => {
   };
 
   UserList.propTypes={
-    users:PropTypes.arrayOf({})
+    users:PropTypes.arrayOf({}),
   }
   
 
